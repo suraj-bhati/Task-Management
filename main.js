@@ -234,7 +234,7 @@ document.getElementById('habitsContainer').addEventListener('click', (event) => 
 });
 
 // Confetti Animation for Habit Completion
-const duration = 25 * 500,
+const duration = 10 * 500,
   animationEnd = Date.now() + duration,
   defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
