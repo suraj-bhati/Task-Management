@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Profile Selection Modal -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <h2>Select Profile</h2>
+            <form id="profileForm">
+                <label for="profileName">Enter your name:</label>
+                <input type="text" id="profileName" name="profileName" required>
+                <button type="submit">Create/Select Profile</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Page -->
+    <div id="mainPage" class="hidden">
+        <header>
+            <h1>Task Management</h1>
+        </header>
+        <div class="container">
+            <!-- Calendar Section -->
+            <div class="calendar-section">
+                <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <span id="monthYear">February 2025</span>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                <table class="calendar">
+                    <thead>
+                        <tr>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                            <th>Sun</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendarBody">
+                        <!-- Calendar dates will be dynamically loaded here -->
+                    </tbody>
+                </table>
+                <div class="selected-date">
+                    <h2 id="selectedDate">No Day Selected</h2>
+                    <div class="time-slots">
+                        <!-- Time slots will be dynamically generated here -->
+                    </div>
+                    <button id="deselectDateButton">Deselect Date</button>
+                </div>
+            </div>
+
+            <!-- Task Section -->
+            <div class="task-section">
+                <!-- Habits Section -->
+                <div class="habits-section">
+                    <h3>Habits</h3>
+                    <div id="habitsContainer">
+                        <div class="habit-item">
+                            <span>Drink Water</span>
+                            <button class="habit-complete">Complete</button>
+                        </div>
+                        <div class="habit-item">
+                            <span>Exercise</span>
+                            <button class="habit-complete">Complete</button>
+                        </div>
+                    </div>
+                    <input type="text" id="newHabitInput" placeholder="Add a new habit...">
+                    <button id="addHabitButton">Add Habit</button>
+                </div>
+
+                <!-- Pomodoro Timer -->
+                <div class="pomodoro-section">
+                    <h3>Pomodoro Timer</h3>
+                    <div class="pomodoro-timer">
+                        <div class="timer-display" id="pomodoroTime">20:00</div>
+                        <div class="timer-buttons">
+                            <button id="startPomodoro">Start</button>
+                            <button id="editPomodoro">Edit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes Section -->
+                <div class="notes-section">
+                    <h3>Notes</h3>
+                    <textarea id="notes" placeholder="Write your notes here..."></textarea>
+                </div>
+
+                <!-- Quotes Section -->
+                <div class="quotes-section">
+                    <h3>Quote of the Day</h3>
+                    <blockquote>"The best way to predict the future is to create it." - Peter Drucker</blockquote>
+                </div>
+
+                <!-- Diary Section -->
+                <div class="diary-section">
+                    <h3>Diary</h3>
+                    <p>What is your mood today?</p>
+                    <div class="mood-options">
+                        <button>😊</button>
+                        <button>🙂</button>
+                        <button>😐</button>
+                        <button>☹️</button>
+                        <button>😢</button>
+                    </div>
+                </div>
+
+                <!-- Todo Section -->
+                <div class="todo-section">
+                    <h3>To-Do List</h3>
+                    <input type="text" id="todoInput" placeholder="Add a new task...">
+                    <button id="addTodoButton">Add</button>
+                    <ul id="todoList">
+                        <!-- To-Do items will be dynamically added here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
